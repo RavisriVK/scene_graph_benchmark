@@ -203,6 +203,8 @@ class BoxList(object):
         return bbox
 
     def __getitem__(self, item):
+        if isinstance(item, torch.Tensor):
+            item = item.cpu()
         bbox = BoxList(self.bbox[item], self.size, self.mode)
         for k, v in self.extra_fields.items():
             bbox.add_field(k, v[item])
