@@ -46,10 +46,12 @@ SOLVER:
     CHECKPOINT_PERIOD: 10000
 TEST:
     IMS_PER_BATCH: 1
+    OUTPUT_FEATURE: True
+    OUTPUT_RELATION_FEATURE: True
     SKIP_PERFORMANCE_EVAL: True
     SAVE_PREDICTIONS: True
     SAVE_RESULTS_TO_TSV: True
-    TSV_SAVE_SUBSET: ['rect', 'class', 'conf', 'feature']
+    TSV_SAVE_SUBSET: ['rect', 'class', 'conf', 'feature', 'relation_feature']
     GATHER_ON_CPU: True
 OUTPUT_DIR: "./output/X152C5_test"
 DATA_DIR: "./datasets"
